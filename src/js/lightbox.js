@@ -252,7 +252,7 @@
     this.$lightbox.css({
       top: top + 'px',
       left: left + 'px'
-    }).fadeIn(this.options.fadeDuration);
+    }).show("slide", { direction: "left" }, 1000);
 
     // Disable scrolling of the page while open
     if (this.options.disableScrolling) {
