@@ -86,7 +86,6 @@
   Lightbox.prototype.enable = function() {
     var self = this;
     $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
-      event.preventDefault();
       self.start($(event.currentTarget));
       return false;
     });
@@ -214,7 +213,7 @@
     function addToAlbum($link) {
       self.album.push({
         alt: $link.attr('data-alt'),
-        link: $link.attr('href'),
+        link: $link.attr('data-link'),
         title: $link.attr('data-title') || $link.attr('title')
       });
     }
